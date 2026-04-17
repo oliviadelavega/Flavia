@@ -1,326 +1,195 @@
-  <!DOCTYPE html>                                                                                                                                                                                              
+ <!DOCTYPE html>                                                                                                                                                                                              
   <html lang="en">                                                                                                                                                                                             
   <head>                                                                                                                                                                                                       
   <meta charset="UTF-8">                                                                                                                                                                                       
   <meta name="viewport" content="width=device-width, initial-scale=1.0">                                                                                                                                       
-  <meta name="description" content="If eczema or atopic dermatitis is shaping your life — we're building something for you. Pre-order now for $49.">                                                           
-  <title>Skin Intelligence — Pre-order</title>
-  <style>                                     
-    :root {                                                                                                                                                                                                    
-      --bg:      #080706;                                                                                                                                                                                      
-      --s1:      #0f0e0c;                                                                                                                                                                                      
-      --s2:      #161410;                                                                                                                                                                                      
-      --border:  #252015;                                                                                                                                                                                      
-      --border2: #342c1e;                                                                                                                                                                                      
-      --accent:  #c97a4e;                     
-      --accent2: #e8a86a;                                                                                                                                                                                      
-      --text:    #f5f2ed;                     
-      --muted:   #a09588;                                                                                                                                                                                      
-      --dim:     #6b5f54;                     
-      --red:     #b85050;                                                                                                                                                                                      
-      --green:   #5a9a6a;                     
-    }                                                                                                                                                                                                          
-    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }                                                                                                                                                                          
-    body {        
-      background: var(--bg);                                                                                                                                                                                   
-      color: var(--text);                 
-      font-family: -apple-system, 'Helvetica Neue', Helvetica, Arial, sans-serif;                                                                                                                              
-      font-size: 16px;                                                                                                                                                                                         
-      line-height: 1.6;                   
-      min-height: 100vh;                                                                                                                                                                                       
-      -webkit-font-smoothing: antialiased;                                                                                                                                                                     
-    }                                         
-    .wrap {                                                                                                                                                                                                    
-      position: relative; z-index: 1;
-      max-width: 680px;                                                                                                                                                                                        
-      margin: 0 auto;                     
-      padding: 0 28px;                                                                                                                                                                                         
-    }                                                                                                                                                                                                          
-    header {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;                                                                                                                                                
-      padding: 24px 32px;                     
-      display: flex; justify-content: space-between; align-items: center;
-      background: rgba(8,7,6,.85);            
-      backdrop-filter: blur(12px);                                                                                                                                                                             
-      -webkit-backdrop-filter: blur(12px);    
-    }                                                                                                                                                                                                          
-    .header-tag { 
-      font-size: 11px; letter-spacing: .16em;                                                                                                                                                                  
-      text-transform: uppercase; color: var(--dim);
-    }                                                                                                                                                                                                          
-    #landing { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 120px 0 80px; }
-    .eyebrow {                                                                                                                                                                                                 
-      font-size: 11px; letter-spacing: .2em;
-      text-transform: uppercase; color: var(--accent);                                                                                                                                                         
-      margin-bottom: 32px;                                                                                                                                                                                     
-      display: flex; align-items: center; gap: 10px;
-    }                                                                                                                                                                                                          
-    .eyebrow::before {
-      content: '';                                                                                                                                                                                             
-      display: block; width: 24px; height: 1px;
-      background: var(--accent);                                                                                                                                                                               
-    }                                     
-    h1 {
-      font-size: clamp(38px, 7vw, 68px);                                                                                                                                                                       
-      font-weight: 300;                       
-      letter-spacing: -.03em;                                                                                                                                                                                  
-      line-height: 1.05;                      
-      margin-bottom: 28px;                                                                                                                                                                                     
-      color: var(--text);
-    }                                                                                                                                                                                                          
-    h1 em { font-style: normal; color: var(--accent2); }
-    .sub {                                                                                                                                                                                                     
-      font-size: clamp(16px, 2.5vw, 19px);
-      color: var(--muted);                    
-      max-width: 520px;                                                                                                                                                                                        
-      line-height: 1.65;
-      margin-bottom: 52px;                                                                                                                                                                                     
-      font-weight: 300;                       
-    }                                                                                                                                                                                                          
-    .sub strong { color: var(--text); font-weight: 400; }
-    .preorder-box {                                                                                                                                                                                            
-      background: var(--s1);                  
-      border: 1px solid var(--border2);                                                                                                                                                                        
-      border-radius: 16px;
-      padding: 40px 36px;                                                                                                                                                                                      
-      margin-bottom: 20px;                    
-    }                                                                                                                                                                                                          
-    .preorder-header {
-      display: flex; justify-content: space-between; align-items: flex-start;                                                                                                                                  
-      margin-bottom: 24px;                    
-      flex-wrap: wrap;                                                                                                                                                                                         
-      gap: 12px;  
-    }                                                                                                                                                                                                          
-    .preorder-title {
-      font-size: 13px; font-weight: 500; color: var(--text);                                                                                                                                                   
-      letter-spacing: .04em; text-transform: uppercase;
-    }                                     
-    .preorder-price {                         
-      font-size: 32px; font-weight: 300; color: var(--accent2);                                                                                                                                                
-      letter-spacing: -.02em; line-height: 1;
-    }                                                                                                                                                                                                          
-    .preorder-price-note {                
-      font-size: 12px; color: var(--dim); margin-top: 4px;                                                                                                                                                     
-    }                                                                                                                                                                                                          
-    .preorder-desc {                      
-      font-size: 15px; color: var(--muted); line-height: 1.7;                                                                                                                                                  
-      margin-bottom: 28px;                                                                                                                                                                                     
-    }                                     
-    .preorder-includes {                                                                                                                                                                                       
-      margin-bottom: 32px;                                                                                                                                                                                     
-      padding: 20px 0;
-      border-top: 1px solid var(--border);                                                                                                                                                                     
-      border-bottom: 1px solid var(--border);
-    }
-    .preorder-includes-label {                                                                                                                                                                                 
-      font-size: 11px; letter-spacing: .14em;
-      text-transform: uppercase; color: var(--dim);                                                                                                                                                            
-      margin-bottom: 16px;                
-    }
-    .include-item {                                                                                                                                                                                            
-      display: flex; align-items: flex-start; gap: 12px;
-      padding: 8px 0;                                                                                                                                                                                          
-      font-size: 14px; color: var(--muted);
-    }                                                                                                                                                                                                          
-    .include-check {                      
-      color: var(--green); font-size: 14px; margin-top: 2px; flex-shrink: 0;                                                                                                                                   
-    }                                                                                                                                                                                                          
-    .checkout-label {                     
-      font-size: 11px; letter-spacing: .14em;                                                                                                                                                                  
-      text-transform: uppercase; color: var(--dim);                                                                                                                                                            
-      margin-bottom: 16px;
-    }                                                                                                                                                                                                          
-    .checkout-buttons {                   
-      display: flex; flex-direction: column; gap: 12px;
-    }                                                                                                                                                                                                          
-    .btn {
-      display: inline-flex; align-items: center; justify-content: center; gap: 10px;                                                                                                                           
-      background: var(--accent);              
-      color: #0a0806;                     
-      border: none; border-radius: 10px;      
-      padding: 16px 28px;                                                                                                                                                                                      
-      font-size: 15px; font-weight: 600;      
-      letter-spacing: .02em;                                                                                                                                                                                   
-      cursor: pointer;
-      transition: background .2s, transform .1s;                                                                                                                                                               
-      font-family: inherit;               
-      white-space: nowrap;                                                                                                                                                                                     
-      text-decoration: none;                                                                                                                                                                                   
-      text-align: center;                 
-    }                                                                                                                                                                                                          
-    .btn:hover { background: var(--accent2); }                                                                                                                                                                 
-    .btn:active { transform: scale(.98); }
-    .checkout-note {                                                                                                                                                                                           
-      font-size: 12px; color: var(--dim); text-align: center; margin-top: 8px;
-    }
-    .form-note { font-size: 12px; color: var(--dim); margin-top: 12px; }                                                                                                                                       
-    .resonators {                             
-      margin: 80px 0;                                                                                                                                                                                          
-      border-top: 1px solid var(--border);    
-      padding-top: 64px;                                                                                                                                                                                       
-    }
-    .resonators-label {                                                                                                                                                                                        
-      font-size: 11px; letter-spacing: .18em;
-      text-transform: uppercase; color: var(--dim);                                                                                                                                                            
-      margin-bottom: 40px;                
-    }
-    .resonator {                                                                                                                                                                                               
-      padding: 24px 0;
-      border-bottom: 1px solid var(--border);                                                                                                                                                                  
-      display: flex; gap: 20px; align-items: flex-start;
-    }                                         
-    .resonator:last-child { border-bottom: none; }                                                                                                                                                             
-    .r-num { font-size: 11px; color: var(--dim); padding-top: 3px; min-width: 20px; }
-    .r-text { font-size: clamp(16px, 2.5vw, 18px); color: var(--muted); font-weight: 300; line-height: 1.55; }                                                                                                 
-    .r-text strong { color: var(--text); font-weight: 400; }
-    .mystery {                                                                                                                                                                                                 
-      background: var(--s1);                                                                                                                                                                                   
-      border: 1px solid var(--border);                                                                                                                                                                         
-      border-radius: 16px;                                                                                                                                                                                     
-      padding: 48px 40px;                                                                                                                                                                                      
-      margin: 40px 0 80px;                                                                                                                                                                                     
-      text-align: center;                                                                                                                                                                                      
-    }                                     
-    .mystery-tag {                                                                                                                                                                                             
-      display: inline-block;                                                                                                                                                                                   
-      background: var(--bg); border: 1px solid var(--border2);
-      border-radius: 20px; padding: 4px 14px;                                                                                                                                                                  
-      font-size: 11px; letter-spacing: .14em;
-      text-transform: uppercase; color: var(--dim);
-      margin-bottom: 24px;                                                                                                                                                                                     
-    }
-    .mystery h2 { font-size: clamp(22px, 4vw, 32px); font-weight: 300; letter-spacing: -.02em; margin-bottom: 16px; color: var(--text); }                                                                      
-    .mystery p { font-size: 15px; color: var(--muted); max-width: 440px; margin: 0 auto; line-height: 1.7; }
-    .guarantee {                                                                                                                                                                                               
-      background: var(--s1);              
-      border: 1px solid var(--border);                                                                                                                                                                         
-      border-radius: 16px;                                                                                                                                                                                     
-      padding: 36px 32px;                                                                                                                                                                                      
-      margin: 0 0 80px;                                                                                                                                                                                        
-      display: flex; gap: 20px; align-items: flex-start;
-    }
-    .guarantee-icon { font-size: 24px; flex-shrink: 0; margin-top: 2px; }                                                                                                                                      
-    .guarantee-title { font-size: 16px; font-weight: 400; color: var(--text); margin-bottom: 8px; }
-    .guarantee-text { font-size: 14px; color: var(--muted); line-height: 1.65; }                                                                                                                               
-    footer {                              
-      border-top: 1px solid var(--border);                                                                                                                                                                     
-      padding: 32px 0;                                                                                                                                                                                         
-      display: flex; justify-content: space-between; align-items: center;                                                                                                                                      
-      flex-wrap: wrap; gap: 12px;                                                                                                                                                                              
-    }                                                                                                                                                                                                          
-    .footer-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--dim); }
-    .footer-text { font-size: 12px; color: var(--dim); }                                                                                                                                                       
-    @keyframes fadeUp {                   
-      from { opacity: 0; transform: translateY(16px); }
-      to   { opacity: 1; transform: translateY(0); }                                                                                                                                                           
-    }                                     
-    .fade-up    { animation: fadeUp .6s ease forwards; }                                                                                                                                                       
-    .fade-up-d1 { animation: fadeUp .6s .1s ease both; }                                                                                                                                                       
-    .fade-up-d2 { animation: fadeUp .6s .2s ease both; }
-    .fade-up-d3 { animation: fadeUp .6s .3s ease both; }                                                                                                                                                       
-    .fade-up-d4 { animation: fadeUp .6s .4s ease both; }
-    .fade-up-d5 { animation: fadeUp .6s .5s ease both; }                                                                                                                                                       
-    .fade-up-d6 { animation: fadeUp .6s .6s ease both; }                                                                                                                                                       
-    @media (max-width: 520px) {                                                                                                                                                                                
-      header { padding: 20px; }                                                                                                                                                                                
-      .preorder-box { padding: 28px 20px; }                                                                                                                                                                    
-      .preorder-header { flex-direction: column; }
-      .btn { width: 100%; text-align: center; }                                                                                                                                                                
-      .mystery { padding: 32px 24px; }                                                                                                                                                                         
-      .guarantee { flex-direction: column; gap: 12px; padding: 28px 24px; }
-      footer { flex-direction: column; align-items: flex-start; }                                                                                                                                              
-    }                                         
-  </style>                                                                                                                                                                                                     
-  </head>
-  <body>                                                                                                                                                                                                       
-  <header>        
-    <div style="display:flex;align-items:center;gap:8px;">                                                                                                                                                     
-      <span style="font-size:22px;line-height:1;">&#129323;</span>
-      <span style="font-size:12px;letter-spacing:.18em;color:var(--dim);">Shhh</span>
-    </div>                                    
-    <div class="header-tag">Pre-order</div>
-  </header>                                                                                                                                                                                                    
-  <div id="landing">                                                                                                                                                                                           
-    <div class="wrap">                                                                                                                                                                                         
-      <div class="eyebrow fade-up">If you're tired of eczema controlling your life</div>                                                                                                                       
-      <h1 class="fade-up-d1">We're building<br><em>Skin Intelligence.</em></h1>
-      <p class="sub fade-up-d2">          
-        If you have <strong>eczema, atopic dermatitis, or chronic itch</strong> &mdash;
-        if your skin has been controlling your behaviour, your choices, your life &mdash;                                                                                                                      
-        we are building this for you.<br><br>
-        We're not ready to say everything yet. But if you want in early &mdash;                                                                                                                                
-        pre-order now and be among the first to receive it.
-      </p>                                                                                                                                                                                                     
-      <div class="preorder-box fade-up-d3">                                                                                                                                                                    
-        <div class="preorder-header">         
-          <div><div class="preorder-title">Founding Member Pre-order</div></div>                                                                                                                               
-          <div style="text-align:right;">
-            <div class="preorder-price">$49</div>                                                                                                                                                              
-            <div class="preorder-price-note">one-time &middot; early access pricing</div>
-          </div>                                                                                                                                                                                               
-        </div>    
-        <p class="preorder-desc">Lock in founding member pricing before we launch. You'll be among the first to receive the product &mdash; and you'll shape what we build.</p>                                
-        <div class="preorder-includes">       
-          <div class="preorder-includes-label">What you get</div>                                                                                                                                              
-          <div class="include-item"><span class="include-check">&#10003;</span><span>First access to Skin Intelligence when it launches</span></div>
-          <div class="include-item"><span class="include-check">&#10003;</span><span>Founding member pricing &mdash; locked forever</span></div>                                                               
-          <div class="include-item"><span class="include-check">&#10003;</span><span>Direct line to the founders &mdash; co-design input</span></div>
-          <div class="include-item"><span class="include-check">&#10003;</span><span>Full refund if we don't deliver what we promise</span></div>                                                              
-        </div>                                
-        <div class="checkout-label">Choose how to pay</div>                                                                                                                                                    
-        <div class="checkout-buttons">
-          <a class="btn" href="https://buy.stripe.com/cNieVg8U20SL38a4p84ow00" target="_blank" rel="noopener">                                                                                                 
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M13.976 9.15c-2.172-.806-3.356-1.426-3.356-2.409 0-.831.683-1.305 1.901-1.305 2.227 0 4.515.858 6.09 
-  1.631l.89-5.494C18.252.975 15.697 0 12.165 0 9.667 0 7.589.654 6.104 1.872 4.56 3.147 3.757 4.992 3.757 7.218c0 4.039 2.467 5.76 6.476 7.219 2.585.92 3.445 1.574 3.445 2.583 0 .98-.84 1.545-2.354          
-  1.545-1.875 0-4.965-.921-7.076-2.19L3.339 21.8C5.073 22.874 8.268 24 11.202 24c2.584 0 4.727-.641 6.263-1.86 1.66-1.311 2.535-3.261 2.535-5.648 0-4.116-2.607-5.839-6.024-7.342Z" fill="currentColor"/></svg>
-            Pre-order with Card &mdash; $49
-          </a>                                                                                                                                                                                                 
-          <div id="paypal-container-688X3RLK44B36"></div>
-        </div>                                                                                                                                                                                                 
-        <div class="checkout-note">Secure checkout. Full refund guarantee.</div>
-      </div>
-      <div class="form-note fade-up-d3" style="margin-bottom:0;">Limited founding member spots available.</div>                                                                                                
-      <div class="resonators fade-up-d4">     
-        <div class="resonators-label">This is for you if &mdash;</div>                                                                                                                                         
-        <div class="resonator"><div class="r-num">01</div><div class="r-text">You're tired of trying to keep a <strong>mental log of everything</strong> &mdash; every meal, every product, every stressful
-  week &mdash; searching for a pattern your doctor never discovered.</div></div>                                                                                                                               
-        <div class="resonator"><div class="r-num">02</div><div class="r-text">You've woken up <strong>during the night having scratched</strong>, without knowing when it started or why tonight was the
-  night.</div></div>                                                                                                                                                                                           
-        <div class="resonator"><div class="r-num">03</div><div class="r-text">You've been handed <strong>the same cortisone cream</strong> for the 100th time, told to moisturise, and left the appointment    
-  knowing nothing new.</div></div>            
-        <div class="resonator"><div class="r-num">04</div><div class="r-text">You have the feeling &mdash; that <strong>certain triggers are starting your flares</strong>. Your body knows. You just can't    
-  prove it. Yet.</div></div>                  
+  <meta name="description" content="Flavia is a wearable device that monitors your skin environment 24/7 — detecting eczema triggers before a flare hits.">                                                    
+  <title>Flavia — Skin Intelligence</title>   
+  <style>                                                                                                                                                                                                      
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:#0a0a0a;color:#e8e2d9;font-family:Georgia,'Times New Roman',serif;min-height:100vh;-webkit-font-smoothing:antialiased;}                                                                      
+  .nav{display:flex;justify-content:space-between;align-items:center;padding:20px 40px;border-bottom:0.5px solid
+  #222;position:sticky;top:0;background:rgba(10,10,10,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);z-index:100;}                                                                         
+  .nav-logo{font-size:13px;color:#888;letter-spacing:.08em;}                                                                                                                                                   
+  .nav-cta{font-size:12px;letter-spacing:.1em;color:#c8883a;text-decoration:none;border:0.5px solid #c8883a;padding:7px 16px;border-radius:2px;font-family:-apple-system,sans-serif;transition:all .2s;}       
+  .nav-cta:hover{background:#c8883a;color:#0a0a0a;}                                                                                                                                                            
+  .hero{display:grid;grid-template-columns:1fr 1fr;gap:48px;padding:80px 40px 60px;align-items:center;max-width:1100px;margin:0 auto;}                                                                         
+  .hero-eyebrow{font-size:11px;letter-spacing:.15em;color:#666;margin-bottom:20px;text-transform:uppercase;font-family:-apple-system,sans-serif;}                                                              
+  .hero-text h1{font-size:clamp(32px,4vw,48px);font-weight:400;line-height:1.15;color:#e8e2d9;margin-bottom:8px;}                                                                                              
+  .hero-text h1 span{color:#c8883a;}                                                                                                                                                                           
+  .hero-sub{font-size:16px;line-height:1.7;color:#999;margin-top:20px;max-width:440px;font-family:-apple-system,sans-serif;}                                                                                   
+  .hero-actions{margin-top:32px;display:flex;gap:12px;align-items:center;flex-wrap:wrap;}                                                                                                                      
+  .btn-primary{background:#c8883a;color:#0a0a0a;font-size:13px;font-family:-apple-system,sans-serif;padding:12px                                                                                               
+  28px;border:none;cursor:pointer;letter-spacing:.05em;border-radius:2px;text-decoration:none;display:inline-block;transition:background .2s;}                                                                 
+  .btn-primary:hover{background:#d4994a;}                                                                                                                                                                      
+  .btn-ghost{background:transparent;color:#888;font-size:13px;font-family:-apple-system,sans-serif;padding:12px 20px;border:0.5px solid                                                                        
+  #333;cursor:pointer;letter-spacing:.05em;border-radius:2px;transition:all .2s;}                                                                                                                              
+  .btn-ghost:hover{border-color:#666;color:#ccc;}                                                                                                                                                              
+  .hero-visual{display:flex;flex-direction:column;align-items:center;gap:16px;}                                                                                                                                
+  .hero-img{width:320px;max-width:100%;border-radius:16px;object-fit:cover;background:#111;}                                                                                                                   
+  .hero-stats{display:flex;flex-direction:column;gap:8px;width:260px;max-width:100%;}                                                                                                                          
+  .stat-row{display:flex;justify-content:space-between;align-items:center;padding:8px 14px;background:#161616;border-radius:4px;border:0.5px solid #222;}                                                      
+  .stat-name{font-size:10px;color:#555;font-family:-apple-system,sans-serif;letter-spacing:.06em;}                                                                                                             
+  .stat-val{font-size:11px;color:#c8883a;font-family:-apple-system,sans-serif;font-weight:500;}                                                                                                                
+  .divider{border:none;border-top:0.5px solid #1a1a1a;margin:0 40px;}                                                                                                                                          
+  .section-wrap{padding:60px 40px;max-width:1100px;margin:0 auto;}                                                                                                                                             
+  .section-label{font-size:11px;letter-spacing:.15em;color:#555;font-family:-apple-system,sans-serif;text-transform:uppercase;margin-bottom:32px;}                                                             
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}                                                                                                                                           
+  .step{padding:24px;border:0.5px solid #1e1e1e;border-radius:4px;}                                                                                                                                            
+  .step-num{font-size:11px;color:#c8883a;font-family:-apple-system,sans-serif;margin-bottom:12px;letter-spacing:.1em;}                                                                                         
+  .step-title{font-size:15px;color:#d4cdc4;margin-bottom:8px;font-weight:400;}                                                                                                                                 
+  .step-body{font-size:13px;color:#666;line-height:1.6;font-family:-apple-system,sans-serif;}                                                                                                                  
+  .founders-wrap{padding:40px 40px 60px;max-width:1100px;margin:0 auto;}                                                                                                                                       
+  .founders-inner{display:flex;gap:24px;align-items:center;}                                                                                                                                                   
+  .founder-bio-card{flex:1;padding:20px;}                                                                                                                                                                      
+  .founder-name{font-size:15px;color:#d4cdc4;margin-bottom:8px;}                                                                                                                                               
+  .founder-bio{font-size:13px;color:#666;line-height:1.65;font-family:-apple-system,sans-serif;}                                                                                                               
+  .founders-photo{flex:0 0 280px;width:280px;height:280px;border-radius:12px;overflow:hidden;border:0.5px solid #222;}                                                                                         
+  .founders-photo img{width:100%;height:100%;object-fit:cover;}                                                                                                                                                
+  .founders-photo-fallback{width:100%;height:100%;background:#1e1e1e;display:flex;align-items:center;justify-content:center;font-family:-apple-system,sans-serif;font-size:14px;color:#555;}                   
+  .preorder-wrap{padding:40px 40px 80px;max-width:1100px;margin:0 auto;}                                                                                                                                       
+  .preorder-card{border:0.5px solid #222;border-radius:4px;padding:32px;display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:32px;}                                            
+  .preorder-left{max-width:420px;}                                                                                                                                                                             
+  .preorder-tag{font-size:10px;letter-spacing:.15em;color:#555;font-family:-apple-system,sans-serif;text-transform:uppercase;margin-bottom:12px;}                                                              
+  .preorder-title{font-size:20px;color:#d4cdc4;margin-bottom:8px;font-weight:400;}                                                                                                                             
+  .preorder-desc{font-size:13px;color:#666;line-height:1.6;font-family:-apple-system,sans-serif;margin-bottom:16px;}                                                                                           
+  .perks{list-style:none;display:flex;flex-direction:column;gap:6px;}                                                                                                                                          
+  .perks li{font-size:12px;color:#666;font-family:-apple-system,sans-serif;padding-left:16px;position:relative;}                                                                                               
+  .perks li::before{content:"\2713";position:absolute;left:0;color:#c8883a;font-size:11px;}                                                                                                                    
+  .preorder-right{display:flex;flex-direction:column;align-items:flex-end;gap:4px;}                                                                                                                            
+  .price{font-size:40px;color:#c8883a;font-weight:400;}                                                                                                                                                        
+  .price-sub{font-size:11px;color:#555;font-family:-apple-system,sans-serif;letter-spacing:.06em;margin-bottom:20px;}                                                                                          
+  .checkout-area{display:flex;flex-direction:column;gap:12px;align-items:flex-end;}                                                                                                                            
+  .checkout-label{font-size:10px;letter-spacing:.12em;color:#444;font-family:-apple-system,sans-serif;text-transform:uppercase;}                                                                               
+  #paypal-container-688X3RLK44B36{min-width:220px;}                                                                                                                                                            
+  .footer{padding:24px 40px;border-top:0.5px solid #1a1a1a;display:flex;justify-content:space-between;align-items:center;max-width:1100px;margin:0 auto;}                                                      
+  .footer-text{font-size:11px;color:#333;font-family:-apple-system,sans-serif;}                                                                                                                                
+  @keyframes fadeUp{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:translateY(0);}}                                                                                                         
+  .fade-in{animation:fadeUp .6s ease forwards;}                                                                                                                                                                
+  .fade-d1{animation:fadeUp .6s .1s ease both;}                                                                                                                                                                
+  .fade-d2{animation:fadeUp .6s .2s ease both;}                                                                                                                                                                
+  .fade-d3{animation:fadeUp .6s .3s ease both;}                                                                                                                                                                
+  @media(max-width:640px){                                                                                                                                                                                     
+    .nav{padding:16px 20px;}                                                                                                                                                                                   
+    .hero{grid-template-columns:1fr;padding:60px 20px 40px;gap:32px;}                                                                                                                                          
+    .hero-visual{display:none;}                                                                                                                                                                                
+    .steps{grid-template-columns:1fr;}                                                                                                                                                                         
+    .section-wrap,.founders-wrap,.preorder-wrap{padding-left:20px;padding-right:20px;}
+    .founders-inner{flex-direction:column;}                                                                                                                                                                    
+    .founders-photo{flex:0 0 auto;width:200px;height:200px;order:-1;}
+    .preorder-card{flex-direction:column;}                                                                                                                                                                     
+    .preorder-right{align-items:flex-start;}  
+    .divider{margin:0 20px;}                                                                                                                                                                                   
+    .footer{padding:24px 20px;flex-direction:column;gap:8px;align-items:flex-start;}
+  }                                                                                                                                                                                                            
+  </style>                                    
+  </head>                                                                                                                                                                                                      
+  <body>          
+  <nav class="nav">                                                                                                                                                                                            
+    <span class="nav-logo">Flavia &mdash; Skin Intelligence</span>
+    <a class="nav-cta" href="#preorder">Pre-order &middot; $49</a>                                                                                                                                             
+  </nav>                                      
+  <section class="hero">                  
+    <div class="hero-text">                   
+      <p class="hero-eyebrow fade-in">Wearable &middot; AI &middot; Eczema</p>                                                                                                                                 
+      <h1 class="fade-d1">Your skin has been<br>running your life.<br><span>Not anymore.</span></h1>
+      <p class="hero-sub fade-d2">Flavia is a wearable device that monitors your skin environment 24/7 &mdash; detecting eczema triggers before a flare hits, so you can finally stop guessing and start       
+  living.</p>                                 
+      <div class="hero-actions fade-d3">                                                                                                                                                                       
+        <a class="btn-primary" href="#preorder">Pre-order for $49 &rarr;</a>                                                                                                                                   
+        <button class="btn-ghost" onclick="document.querySelector('.section-wrap').scrollIntoView({behavior:'smooth'})">See how it works</button>                                                              
       </div>                                                                                                                                                                                                   
-      <div class="mystery fade-up-d5">
-        <div class="mystery-tag">In development</div>                                                                                                                                                          
-        <h2>We're not another skincare app.</h2>
-        <p>We're building the solution that should have existed by now. Something that listens to your body the way you've always wanted a doctor to.</p>                                                      
-      </div>      
-      <div class="guarantee fade-up-d6">                                                                                                                                                                       
-        <div class="guarantee-icon">&#128274;</div>
-        <div>                                                                                                                                                                                                  
-          <div class="guarantee-title">100% money-back guarantee</div>
-          <div class="guarantee-text">If we don't deliver what we promise, you get a full refund. No questions asked. We're building this because we need it too.</div>                                        
-        </div>                                
+    </div>                                                                                                                                                                                                     
+    <div class="hero-visual fade-d2">                                                                                                                                                                          
+      <img class="hero-img" src="assets/images/wearable-hero.jpg" alt="Flavia wearable device" width="320" height="400" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">     
+      <div style="display:none;width:320px;height:400px;border:1px dashed #2a2a2a;border-radius:16px;align-items:center;justify-content:center;background:#111;"><span                                         
+  style="font-size:11px;color:#444;font-family:sans-serif;">Product photo</span></div>                                                                                                                         
+      <div class="hero-stats">            
+        <div class="stat-row"><span class="stat-name">Humidity</span><span class="stat-val">62% &uarr;</span></div>                                                                                            
+        <div class="stat-row"><span class="stat-name">Trigger risk</span><span class="stat-val">Low</span></div>                                                                                               
+        <div class="stat-row"><span class="stat-name">Barrier score</span><span class="stat-val">7.4</span></div>                                                                                              
       </div>                                                                                                                                                                                                   
-      <footer>    
-        <div class="footer-dot"></div>                                                                                                                                                                         
-        <div class="footer-text">Built for and by people with eczema.</div>
-        <div class="footer-text" style="color:var(--border2);">&copy; 2026</div>                                                                                                                               
-      </footer>                           
-    </div>
-  </div>                                                                                                                                                                                                       
-  <script src="https://www.paypal.com/sdk/js?client-id=BAAaYx0_LNkapu3iVZvB7G3sZAJdbNOey2NmF5XuOQtrR7T-N_VqnvhmFQKHvmYvH3cLiAqFaIuAr2P2Pk&components=hosted-buttons&disable-funding=venmo&currency=USD" 
+    </div>                                                                                                                                                                                                     
+  </section>                                  
+  <hr class="divider">                                                                                                                                                                                         
+  <section class="section-wrap">
+    <p class="section-label">How it works</p>                                                                                                                                                                  
+    <div class="steps">
+      <div class="step">                                                                                                                                                                                       
+        <p class="step-num">01</p>            
+        <p class="step-title">Wear it</p> 
+        <p class="step-body">The device sits on your wrist and reads your skin environment continuously &mdash; humidity, temperature, inflammation markers, sweat composition.</p>
+      </div>                                                                                                                                                                                                   
+      <div class="step">                  
+        <p class="step-num">02</p>                                                                                                                                                                             
+        <p class="step-title">It learns your triggers</p>                                                                                                                                                      
+        <p class="step-body">Our AI maps your personal trigger patterns &mdash; food, environment, stress &mdash; and predicts flares hours before they happen.</p>
+      </div>                                                                                                                                                                                                   
+      <div class="step">                  
+        <p class="step-num">03</p>                                                                                                                                                                             
+        <p class="step-title">You stay in control</p>                                                                                                                                                          
+        <p class="step-body">Get alerts before a flare hits. See exactly what caused it. Stop reacting and start preventing.</p>                                                                               
+      </div>                                                                                                                                                                                                   
+    </div>                                                                                                                                                                                                     
+  </section>
+  <hr class="divider">                                                                                                                                                                                         
+  <section class="founders-wrap">
+    <p class="section-label">Who's building this</p>                                                                                                                                                           
+    <div class="founders-inner">              
+      <div class="founder-bio-card">      
+        <p class="founder-name">Vici</p>
+        <p class="founder-bio">Has lived with eczema her whole life. Spent years testing every cortisone cream, elimination diet, and specialist &mdash; then decided to build the tool she always needed.</p> 
+      </div>                                  
+      <div class="founders-photo">                                                                                                                                                                             
+        <img src="assets/images/founders.jpg" alt="Vici and Oli, founders of Flavia" width="280" height="280"                                                                                                  
+  onerror="this.style.display='none';this.parentElement.querySelector('.founders-photo-fallback').style.display='flex';">                                                                                      
+        <div class="founders-photo-fallback" style="display:none;">V &amp; O</div>                                                                                                                             
+      </div>                                                                                                                                                                                                   
+      <div class="founder-bio-card">                                                                                                                                                                           
+        <p class="founder-name">Oli</p>
+        <p class="founder-bio">Building the hardware and AI from our hackerhouse in San Francisco. We read 200+ dermatology papers so you don't have to.</p>                                                   
+      </div>                                  
+    </div>                                                                                                                                                                                                     
+  </section>                                                                                                                                                                                                   
+  <hr class="divider">                                                                                                                                                                                         
+  <section class="preorder-wrap" id="preorder">                                                                                                                                                                
+    <div class="preorder-card">                                                                                                                                                                                
+      <div class="preorder-left">
+        <p class="preorder-tag">Founding member pre-order</p>                                                                                                                                                  
+        <p class="preorder-title">Be the first to know your triggers</p>
+        <p class="preorder-desc">Lock in founding pricing before we launch. You'll shape what we build &mdash; and receive the device before anyone else.</p>
+        <ul class="perks">                                                                                                                                                                                     
+          <li>First access when Flavia ships</li>
+          <li>Founding member price &mdash; locked forever</li>                                                                                                                                                
+          <li>Direct line to the founders</li>                                                                                                                                                                 
+          <li>Shape the product roadmap</li>                                                                                                                                                                   
+        </ul>                                                                                                                                                                                                  
+      </div>                                                                                                                                                                                                   
+      <div class="preorder-right">                                                                                                                                                                             
+        <p class="price">$49</p>                                                                                                                                                                               
+        <p class="price-sub">one-time &middot; early access</p>                                                                                                                                                
+        <div class="checkout-area">           
+          <a class="btn-primary" href="https://buy.stripe.com/cNieVg8U20SL38a4p84ow00" target="_blank" rel="noopener">Pre-order with Card &rarr;</a>                                                           
+          <p class="checkout-label">or pay with</p>
+          <div id="paypal-container-688X3RLK44B36"></div>                                                                                                                                                      
+        </div>                            
+      </div>                                                                                                                                                                                                   
+    </div>                                                                                                                                                                                                     
+  </section>                                                                                                                                                                                                   
+  <footer class="footer">                                                                                                                                                                                      
+    <span class="footer-text">Built for and by people with eczema.</span>
+    <span class="footer-text">&copy; 2026 Flavia</span>                                                                                                                                                        
+  </footer>                               
+  <script src="https://www.paypal.com/sdk/js?client-id=BAAaYx0_LNkapu3iVZvB7G3sZAJdbNOey2NmF5XuOQtrR7T-N_VqnvhmFQKHvmYvH3cLiAqFaIuAr2P2Pk&components=hosted-buttons&disable-funding=venmo&currency=USD"        
   async></script>                                                                                                                                                                                              
   <script>                                
-    window.addEventListener('load', function() {
-      if (typeof paypal !== 'undefined') {                                                                                                                                                                     
-        paypal.HostedButtons({
-          hostedButtonId: "688X3RLK44B36",                                                                                                                                                                     
-        }).render("#paypal-container-688X3RLK44B36");
-      }                                   
-    });
+  window.addEventListener('load', function() {                                                                                                                                                                 
+    if (typeof paypal !== 'undefined') {                                                                                                                                                                       
+      paypal.HostedButtons({                  
+        hostedButtonId: "688X3RLK44B36",                                                                                                                                                                       
+      }).render("#paypal-container-688X3RLK44B36");
+    }                                                                                                                                                                                                          
+  });
   </script>                                                                                                                                                                                                    
-  </body>
-  </html>   
+  </body>                                     
+  </html>     
