@@ -60,8 +60,7 @@
   .price{font-size:40px;color:#c8883a;font-weight:400;}                                                                                                                                                        
   .price-sub{font-size:11px;color:#555;font-family:-apple-system,sans-serif;letter-spacing:.06em;margin-bottom:20px;}                                                                                          
   .checkout-area{display:flex;flex-direction:column;gap:12px;align-items:flex-end;}                                                                                                                            
-  .checkout-label{font-size:10px;letter-spacing:.12em;color:#444;font-family:-apple-system,sans-serif;text-transform:uppercase;}                                                                               
-  #paypal-container-688X3RLK44B36{min-width:220px;}                                                                                                                                                            
+  .checkout-label{font-size:10px;letter-spacing:.12em;color:#444;font-family:-apple-system,sans-serif;text-transform:uppercase;}                                                                                                                                                                                                                                         
   .footer{padding:24px 40px;border-top:0.5px solid #1a1a1a;display:flex;justify-content:space-between;align-items:center;max-width:1100px;margin:0 auto;}                                                      
   .footer-text{font-size:11px;color:#333;font-family:-apple-system,sans-serif;}                                                                                                                                
   @keyframes fadeUp{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:translateY(0);}}                                                                                                         
@@ -170,9 +169,7 @@ Medical School. Her work sits at the intersection of nutrition, skin health, and
         <p class="price">$49</p>          
         <p class="price-sub">one-time &middot; early access</p>                                                                                                                                                
         <div class="checkout-area">                                                                                                                                                                            
-          <a class="btn-primary" href="https://buy.stripe.com/cNieVg8U20SL38a4p84ow00" target="_blank" rel="noopener">Pre-order with Card &rarr;</a>
-          <p class="checkout-label">or pay with</p>                                                                                                                                                            
-          <div id="paypal-container-688X3RLK44B36"></div>                                                                                                                                                      
+          <a class="btn-primary" href="https://buy.stripe.com/cNieVg8U20SL38a4p84ow00" target="_blank" rel="noopener">Pre-order with Card &rarr;</a>                                                                                                                                                 
         </div>                                
       </div>                                                                                                                                                                                                   
     </div>                                                                                                                                                                                                     
@@ -180,17 +177,6 @@ Medical School. Her work sits at the intersection of nutrition, skin health, and
   <footer class="footer">                                                                                                                                                                                      
     <span class="footer-text">Built for and by people with eczema.</span>                                                                                                                                      
     <span class="footer-text">&copy; 2026 Flavia</span>
-  </footer>                               
-  <script src="https://www.paypal.com/sdk/js?client-id=BAAaYx0_LNkapu3iVZvB7G3sZAJdbNOey2NmF5XuOQtrR7T-N_VqnvhmFQKHvmYvH3cLiAqFaIuAr2P2Pk&components=hosted-buttons&disable-funding=venmo&currency=USD" 
-  async></script>                                                                                                                                                                                              
-  <script>                                
-  window.addEventListener('load', function() {                                                                                                                                                                 
-    if (typeof paypal !== 'undefined') {                                                                                                                                                                       
-      paypal.HostedButtons({                                                                                                                                                                                   
-        hostedButtonId: "688X3RLK44B36",                                                                                                                                                                       
-      }).render("#paypal-container-688X3RLK44B36");                                                                                                                                                            
-    }                                     
-  });                                                                                                                                                                                                          
-  </script>                                                                                                                                                                                                    
+  </footer>                                                                                                                                                                                                                                                                                                                                                                                                                             
   </body>
   </html>     
